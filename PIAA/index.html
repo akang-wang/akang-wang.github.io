@@ -1,1 +1,310 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[CLS] is Not Enough: Multi-Label Recognition via Patch-Level Inference and Adaptive Aggregation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .title.is-1 {
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        .author-block {
+            margin-right: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .affiliation-block {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-title {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .abstract-text {
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .method-image {
+            max-width: 100%;
+            height: auto;
+            margin: 1.5rem auto;
+            display: block;
+        }
+
+        .links-block .button {
+            margin: 0.2rem;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop has-text-centered">
+                <h1 class="title is-1 publication-title">
+                    <span style="font-family: monospace;">[CLS]</span> is Not Enough: Multi-Label Recognition via
+                    Patch-Level Inference and Adaptive Aggregation
+                </h1>
+
+                <div class="is-size-5 publication-authors">
+                    <span class="author-block">Akang Wang<sup>1</sup>,</span>
+                    <span class="author-block">Xili Deng<sup>1</sup>,</span>
+                    <span class="author-block">Zhanxuan Hu<sup>1</sup> ✉,</span>
+                    <span class="author-block">Yi Zhao<sup>1</sup>,</span>
+                    <span class="author-block">Yonghang Tai<sup>1</sup>,</span>
+                    <span class="author-block">Huafeng Li<sup>2</sup></span>
+                </div>
+
+                <div class="is-size-5 affiliation-block mt-3">
+                    <span class="author-block"><sup>1</sup>Yunnan Normal University, Kunming, China</span><br>
+                    <span class="author-block"><sup>2</sup>Kunming University of Science and Technology, Kunming,
+                        China</span>
+                </div>
+
+                <div class="is-size-5 publication-title">
+                    <strong>ICML 2026</strong>
+                </div>
+
+                <div class="column has-text-centered">
+                    <div class="publication-links">
+                        <!-- Paper Link -->
+                        <span class="link-block">
+                            <a href="#" class="button is-dark is-outlined">
+                                <span class="icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </span>
+                                <span>Paper (Coming Soon)</span>
+                            </a>
+                        </span>
+                        <!-- Code Link -->
+                        <span class="link-block">
+                            <a href="https://github.com/YOUR_GITHUB_USERNAME/PIAA" class="button is-dark is-outlined">
+                                <span class="icon">
+                                    <i class="fab fa-github"></i>
+                                </span>
+                                <span>Code</span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Image -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column is-full-width has-text-centered">
+                    <img src="main.png" alt="PIAA Framework Overview" class="method-image"
+                        style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p class="is-size-6 has-text-grey has-text-justified mt-3">
+                        <strong>Overview of PIAA:</strong> Instead of relying on a single global <span
+                            style="font-family: monospace;">[CLS]</span> token, our framework formulates prediction as
+                        Patch-level Inference followed by Adaptive Aggregation. It consists of (i) PVCL to learn a
+                        visual classifier without training, narrowing the vision-language modality gap, and (ii) PAA to
+                        adaptively combine patch-level scores with <span style="font-family: monospace;">[CLS]</span>
+                        for the final multi-label output.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3 section-title has-text-centered">Abstract</h2>
+                    <div class="content abstract-text">
+                        <p>
+                            Vision-Language Models such as CLIP exhibit strong zero-shot recognition capability by
+                            aligning images with textual concepts, yet they often underperform on multi-label
+                            recognition where multiple objects co-exist. A key bottleneck is that the <code>[CLS]</code>
+                            token, as a single global visual representation, is insufficient to faithfully encode
+                            diverse targets with varying scales, contexts, and co-occurrence patterns.
+                        </p>
+                        <p>
+                            To address this limitation, we present a new multi-label image recognition framework, termed
+                            <strong>PIAA</strong>, which formulates prediction as <em><strong>P</strong>atch-level
+                                <strong>I</strong>nference followed by <strong>A</strong>daptive
+                                <strong>A</strong>ggregation</em>. Specifically, we first enhance patch-wise predictions
+                            from two complementary perspectives: (i) mitigating semantic entanglement in the visual
+                            encoder to obtain more discriminative patch representations, and (ii) learning an
+                            unsupervised visual classifier to narrow the vision–language modality gap.
+                        </p>
+                        <p>
+                            We then introduce an adaptive aggregation module that consolidates patch-level scores into
+                            the final multi-label prediction. Notably, the entire pipeline is fully
+                            <em>Training-free</em>, requiring no gradient updates or parameter fine-tuning. Experiments
+                            show that our method achieves strong improvements with minimal extra computation, exceeding
+                            a 6% mAP gain on the challenging NUS-WIDE benchmark over representative baselines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method details -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 section-title has-text-centered">Methodology</h2>
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <div class="content">
+                        <p class="is-size-5"><strong>1. Patch-based Visual Classifier Learning (PVCL)</strong></p>
+                        <p class="is-size-6">
+                            To bridge the vision-language modality gap without backpropagation, PVCL learns a visual
+                            classifier directly from the patch embeddings. By using entropy-driven patch selection, it
+                            isolates discriminative representations and models them through Gaussian Discriminant
+                            Analysis (GDA) to provide robust, visually-aligned decision boundaries.
+                        </p>
+
+                        <p class="is-size-5 mt-4"><strong>2. Prediction Adaptive Aggregation (PAA)</strong></p>
+                        <p class="is-size-6">
+                            PAA max-pools the highest visual responses to capture small foreground objects without
+                            losing spatial evidence, successfully merging robust localized patches with the overall
+                            global <code>[CLS]</code> anchoring.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 section-title has-text-centered">Experimental Results</h2>
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+
+                    <h3 class="title is-4">1. Quantitative Performance</h3>
+                    <div class="content">
+                        <p class="is-size-6">
+                            <strong>PIAA</strong> consistently establishes a new state-of-the-art among training-free
+                            and unsupervised methods across four challenging multi-label benchmarks, even rivaling fully
+                            supervised baselines. Compared to previous state-of-the-art models, it requires no gradient
+                            updates while significantly accelerating reasoning and adaptation.
+                        </p>
+                        <div class="table-container">
+                            <table
+                                class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-text-centered">
+                                <thead>
+                                    <tr style="background-color: #f5f5f5;">
+                                        <th class="has-text-left">Method (Setting)</th>
+                                        <th>VOC12</th>
+                                        <th>VOC07</th>
+                                        <th>COCO</th>
+                                        <th>NUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="has-text-left">CLIP (Training-free)</td>
+                                        <td>78.3</td>
+                                        <td>78.6</td>
+                                        <td>49.2</td>
+                                        <td>34.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="has-text-left">TagCLIP (Training-free)</td>
+                                        <td>90.8</td>
+                                        <td>91.2</td>
+                                        <td>70.0</td>
+                                        <td>38.7</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="has-text-left">SPARC (Training-free)</td>
+                                        <td>-</td>
+                                        <td>88.7</td>
+                                        <td>68.0</td>
+                                        <td>47.5</td>
+                                    </tr>
+                                    <tr style="background-color: #e8f4f8;">
+                                        <td class="has-text-left"><strong>PIAA (Ours)</strong></td>
+                                        <td><strong>92.2</strong></td>
+                                        <td><strong>92.5</strong></td>
+                                        <td><strong>73.2</strong></td>
+                                        <td><strong>50.6</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h3 class="title is-4 mt-6">2. Qualitative Results</h3>
+                    <div class="content has-text-centered mt-4">
+                        <img src="pvcl.png" alt="Activation Maps Comparison"
+                            style="max-width: 90%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <p class="is-size-6 has-text-grey has-text-justified mt-3">
+                            <strong>Comparison of activation maps:</strong> PVCL tightly concentrates activations on
+                            target objects, correcting the baseline's contextual attention diffusion. It acts directly
+                            within the visual manifold to enforce spatial discriminability.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Citation -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 section-title has-text-centered">Citation</h2>
+            <div class="content is-size-6">
+                <pre><code>@inproceedings{wang2026piaa,
+  title={[CLS] is Not Enough: Multi-Label Recognition via Patch-Level Inference and Adaptive Aggregation},
+  author={Wang, Akang and Deng, Xili and Hu, Zhanxuan and Zhao, Yi and Tai, Yonghang and Li, Huafeng},
+  booktitle={International Conference on Machine Learning (ICML)},
+  year={2026}
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer mt-6" style="background-color: #fafafa;">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    Project page template adapted from <a
+                        href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and implemented using <a
+                        href="https://bulma.io/">Bulma</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
