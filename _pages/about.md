@@ -44,5 +44,5 @@ Hi everyone, I’m currently working on 3D scene reconstruction and understandin
 
 
 # 📖 Educations
-- *2025.09 - 2028.06 (now)*, Master of Computer Science and Technology Yunnan Normal University, Kunming, China. 
+- *2025.09 - now*, Master of Computer Science and Technology Yunnan Normal University, Kunming, China. 
 <!-- - *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. -->
