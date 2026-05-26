@@ -31,7 +31,7 @@ Hi everyone, I’m currently working on 3D scene reconstruction and understandin
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/piaa.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[[CLS] is Not Enough: Multi-Label Recognition via Patch-Level Inference and Adaptive Aggregation](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+[[CLS] is Not Enough: Multi-Label Recognition via Patch-Level Inference and Adaptive Aggregation](https://arxiv.org/pdf/2605.25821)
 
 **Akang Wang**, Xili Deng, Zhanxuan Hu, YiZhao, Yonghang Tai, Huafeng Li
 
