@@ -28,8 +28,10 @@ Hi everyone, I’m currently working on 3D scene reconstruction and understandin
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/piaa.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><a href="/PIAA/"><img src='images/piaa.png' alt="sym" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
+
+
 
 [[CLS] is Not Enough: Multi-Label Recognition via Patch-Level Inference and Adaptive Aggregation](https://arxiv.org/pdf/2605.25821)
 
