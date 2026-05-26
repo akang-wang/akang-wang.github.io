@@ -35,7 +35,7 @@ Hi everyone, I’m currently working on 3D scene reconstruction and understandin
 
 **Akang Wang**, Xili Deng, Zhanxuan Hu, YiZhao, Yonghang Tai, Huafeng Li
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=rAl6HIEAAAAJ&citation_for_view=rAl6HIEAAAAJ:u-x6o8ySG0sC) <strong><span class='show_paper_citations' data='rAl6HIEAAAAJ:u-x6o8ySG0sC'></span></strong>  
 - We tackle multi-label recognition by analytically deriving a patch-based visual classifier to generate reliable, fine-grained object predictions without any model training. We then adaptively fuse these local patch scores with the global image context to robustly identify multiple co-existing targets.
 </div>
 </div>
