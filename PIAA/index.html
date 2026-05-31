@@ -117,7 +117,7 @@
             border-radius: 2px;
         }
 
-        /* ================= 完美对齐的表格样式 ================= */
+
         .table-container {
             margin: 0 auto;
             max-width: 1000px;
@@ -200,7 +200,6 @@
             vertical-align: middle;
         }
 
-        /* ================= 轮播图专属样式 ================= */
         .carousel-container {
             position: relative;
             margin: 2rem auto;
@@ -292,7 +291,7 @@
             font-weight: 600;
         }
 
-        /* ======================================================= */
+
 
         .bibtex-block pre {
             background-color: #1f2937;
@@ -306,7 +305,7 @@
             text-align: left;
             max-width: 1100px;
             margin: 0 auto 4rem;
-            /* increase bottom space */
+
         }
 
         .footer {
@@ -315,19 +314,16 @@
             padding: 3rem 1.5rem;
         }
 
-        /* Hide browser vertical scrollbar while keeping scrolling functionality */
+
         html,
         body {
             -ms-overflow-style: none;
-            /* IE and Edge */
             scrollbar-width: none;
-            /* Firefox */
         }
 
         html::-webkit-scrollbar,
         body::-webkit-scrollbar {
             display: none;
-            /* Safari and Chrome */
             width: 0;
             height: 0;
         }
@@ -367,7 +363,7 @@
 
                 <div class="links-block">
                     <span class="link-block">
-                        <a href="#" class="button is-dark">
+                        <a href="https://arxiv.org/abs/2605.25821" class="button is-dark">
                             <span class="icon">
                                 <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -627,7 +623,7 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td class="has-text-left">S-CLIP</td>
+                                                    <td class="has-text-left">SCLIP</td>
                                                     <td>84.7</td>
                                                     <td>85.7</td>
                                                     <td>63.1</td>
@@ -644,7 +640,7 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td class="has-text-left">ITA-CLIP</td>
+                                                    <td class="has-text-left">ITACLIP</td>
                                                     <td>86.2</td>
                                                     <td>86.5</td>
                                                     <td>67.7</td>
@@ -781,6 +777,24 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
+                                                    <td class="has-text-left">VOC12</td>
+                                                    <td>43.2</td>
+                                                    <td>0.2</td>
+                                                    <td style="color: #2563eb; font-weight: bold;">216.0&times;</td>
+                                                    <td>5.8</td>
+                                                    <td>0.2</td>
+                                                    <td style="color: #2563eb; font-weight: bold;">29.0&times;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="has-text-left">VOC07</td>
+                                                    <td>45.6</td>
+                                                    <td>0.2</td>
+                                                    <td style="color: #2563eb; font-weight: bold;">228.0&times;</td>
+                                                    <td>5.4</td>
+                                                    <td>0.2</td>
+                                                    <td style="color: #2563eb; font-weight: bold;">27.0&times;</td>
+                                                </tr>
+                                                <tr>
                                                     <td class="has-text-left">COCO</td>
                                                     <td>512.4</td>
                                                     <td>1.6</td>
@@ -852,11 +866,14 @@
             <div class="columns is-centered mt-4">
                 <div class="column is-12 has-text-centered">
                     <div class="bibtex-block">
-                        <pre><code>@inproceedings{wang2026piaa,
-title     = {[CLS] is Not Enough: Multi-Label Recognition via Patch-Level Inference and Adaptive Aggregation},
-author    = {Wang, Akang and Deng, Xili and Hu, Zhanxuan and Zhao, Yi and Tai, Yonghang and Li, Huafeng},
-booktitle = {International Conference on Machine Learning (ICML)},
-year      = {2026}
+                        <pre><code>@misc{wang2026clsenoughmultilabelrecognition,
+      title={[CLS] is Not Enough: Multi-Label Recognition via Patch-Level Inference and Adaptive Aggregation}, 
+      author={Akang Wang and Xili Deng and Zhanxuan Hu and Yi Zhao and Yonghang Tai and Huafeng Li},
+      year={2026},
+      eprint={2605.25821},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2605.25821}, 
 }</code></pre>
                     </div>
                 </div>
@@ -884,7 +901,6 @@ year      = {2026}
                     dots.forEach(dot => dot.classList.remove('active'));
                     if (dots[index]) dots[index].classList.add('active');
 
-                    // Adjust viewport height and navigation button vertical position to current slide height
                     const currentSlide = slides[index];
                     if (currentSlide) {
                         const slideHeight = currentSlide.offsetHeight;
@@ -897,7 +913,7 @@ year      = {2026}
                     }
                 };
 
-                // Initialize heights and update on resize / load
+          
                 setTimeout(() => updateCarousel(currentIndex), 100);
                 window.addEventListener('load', () => updateCarousel(currentIndex));
                 window.addEventListener('resize', () => updateCarousel(currentIndex));
@@ -948,7 +964,7 @@ year      = {2026}
 
             function ensureAnimate() { if (!rafId) rafId = requestAnimationFrame(animate); }
 
-            // Wheel: update target and smoothly approach it (no added momentum)
+       
             window.addEventListener('wheel', function (e) {
                 if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return; // horizontal scroll
                 e.preventDefault();
@@ -957,7 +973,6 @@ year      = {2026}
                 ensureAnimate();
             }, { passive: false });
 
-            // Touch handling: map drag to target (no fling)
             let touchStartY = 0;
             let touchStartTarget = 0;
             window.addEventListener('touchstart', function (e) {
@@ -976,7 +991,7 @@ year      = {2026}
                 }
             }, { passive: false });
 
-            // Keyboard navigation: update target and smooth to it
+
             window.addEventListener('keydown', (e) => {
                 const step = 60;
                 const curPos = window.scrollY || document.documentElement.scrollTop;
