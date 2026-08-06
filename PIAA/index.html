@@ -342,7 +342,8 @@
                 </h1>
 
                 <div class="is-size-5 publication-authors mt-5">
-                    <span class="author-block"><a href="https://akang-wang.github.io/">Akang Wang</a><sup>1</sup>,</span>
+                    <span class="author-block"><a href="https://akang-wang.github.io/">Akang
+                            Wang</a><sup>1</sup>,</span>
                     <span class="author-block">Xili Deng<sup>1</sup>,</span>
                     <span class="author-block"><a href="https://kdd-code.github.io/">Zhanxuan Hu</a><sup>1
                             ✉</sup>,</span>
@@ -872,6 +873,13 @@
   booktitle={Proceedings of the International Conference on Machine Learning},
   year={2026}
 }</code></pre>
+
+                        Total Page View <span id="vercount_value_page_pv">Loading</span>
+
+                        Total Visits <span id="vercount_value_site_pv">Loading</span>
+
+                        Site Total Visitors <span id="vercount_value_site_uv">Loading</span>
+
                     </div>
                 </div>
             </div>
@@ -879,6 +887,9 @@
     </section>
 
 
+
+
+    <script defer src="https://events.vercount.one/js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -910,7 +921,7 @@
                     }
                 };
 
-          
+
                 setTimeout(() => updateCarousel(currentIndex), 100);
                 window.addEventListener('load', () => updateCarousel(currentIndex));
                 window.addEventListener('resize', () => updateCarousel(currentIndex));
@@ -961,7 +972,7 @@
 
             function ensureAnimate() { if (!rafId) rafId = requestAnimationFrame(animate); }
 
-       
+
             window.addEventListener('wheel', function (e) {
                 if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return; // horizontal scroll
                 e.preventDefault();
@@ -1006,6 +1017,8 @@
             });
         })();
     </script>
+
+
 
 </body>
 
